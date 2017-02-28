@@ -7,7 +7,7 @@ setup(
   author = 'Igor Khripchenko',
   author_email = 'ikhripchenko@gmail.com',
   url = 'https://github.com/khrigo/instagram-follow',
-  download_url = 'https://github.com/khrigo/instagram-follow/tarball/0.1',
+  download_url = 'https://github.com/khrigo/instragram-follow/releases',
   keywords = ['instagram', 'bot', 'api', 'wrapper'],
   classifiers = [],
   install_requires=['tqdm', 'requests-toolbelt', 'requests'],
