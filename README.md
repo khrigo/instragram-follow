@@ -13,6 +13,12 @@ sudo pip install -r requirements.txt
 
 ## Sample usage
 
+Following user followers
 ```python
 python follow_user_followers.py khrigo
+```
+
+Unfollowing everyone users
+```python
+python unfollow_everyone.py
 ```
