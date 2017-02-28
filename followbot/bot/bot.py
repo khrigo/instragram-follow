@@ -27,23 +27,34 @@ from .bot_unfollow import unfollow_everyone
 from .bot_filter import check_user
 from .bot_filter import convert_to_user_id
 
+from .bot_like import like
+from .bot_like import like_medias
+from .bot_like import like_user_id
+from .bot_like import like_users
+from .bot_like import like_followers
+
 class Bot(API):
     def __init__(self,
                  max_follows_per_day=350,
                  follow_delay=30,
-                 max_unfollows_per_day=350,
-                 unfollow_delay=10):
+                 max_unfollows_per_day=2000,
+                 unfollow_delay=7,
+                 max_likes_per_day=1000,
+                 like_delay=5):
         super(self.__class__, self).__init__()
 
         self.total_followed = 0
         self.total_unfollowed = 0
+        self.total_liked = 0
         self.start_time = datetime.datetime.now()
 
         # limits
+        self.max_likes_per_day = max_likes_per_day
         self.max_follows_per_day = max_follows_per_day
         self.max_unfollows_per_day = max_unfollows_per_day
 
         # delays
+        self.like_delay = like_delay
         self.follow_delay = follow_delay
         self.unfollow_delay = unfollow_delay
 
@@ -72,6 +83,8 @@ class Bot(API):
             self.logger.info("  Total followed: %d" % self.total_followed)
         if self.total_unfollowed:
             self.logger.info("  Total unfollowed: %d" % self.total_unfollowed)
+        if self.total_liked:
+            self.logger.info("  Total liked: %d" % self.total_liked)
 
 # getters
 
@@ -108,6 +121,23 @@ class Bot(API):
 
     def unfollow_everyone(self):
         return unfollow_everyone(self)
+
+# like
+
+    def like(self, media_id):
+        return like(self, media_id)
+
+    def like_medias(self, media_ids):
+        return like_medias(self, media_ids)
+
+    def like_user_id(self, user_id, amount=None):
+        return like_user_id(self, user_id, amount)
+
+    def like_users(self, user_ids, nlikes=None):
+        return like_users(self, user_ids, nlikes)
+
+    def like_followers(self, user_id, nlikes=None):
+        return like_followers(self, user_id, nlikes)
 
 # filter
 
