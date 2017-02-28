@@ -1,0 +1,62 @@
+2017-02-28 22:39:06,921 Bot Started
+2017-02-28 22:39:16,619 Starting new HTTPS connection (1): i.instagram.com
+2017-02-28 22:39:17,059 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:17,949 Request return 400 error!
+2017-02-28 22:39:17,950 Login or password is incorrect.
+2017-02-28 22:39:17,950 Bot stopped. Worked: 0:00:11.031194
+2017-02-28 22:39:20,785 Bot Started
+2017-02-28 22:39:29,419 Starting new HTTPS connection (1): i.instagram.com
+2017-02-28 22:39:29,729 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:30,324 Login success!
+2017-02-28 22:39:30,324 Like followers of: khrigo.
+2017-02-28 22:39:30,328 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:30,678 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:30,995 Request return 429 error!
+2017-02-28 22:39:30,995 khrigo not found / closed / has no followers.
+2017-02-28 22:39:30,995 Like followers of: 3.
+2017-02-28 22:39:30,999 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:31,320 Request return 429 error!
+2017-02-28 22:39:31,321 3 not found / closed / has no followers.
+2017-02-28 22:39:31,325 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:31,676 Bot stopped. Worked: 0:00:10.891576
+2017-02-28 22:39:55,851 Bot Started
+2017-02-28 22:39:55,875 Starting new HTTPS connection (1): i.instagram.com
+2017-02-28 22:39:56,201 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:56,801 Login success!
+2017-02-28 22:39:56,801 Like followers of: khrigo.
+2017-02-28 22:39:56,808 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:57,433 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:57,751 Request return 429 error!
+2017-02-28 22:39:57,752 khrigo not found / closed / has no followers.
+2017-02-28 22:39:57,752 Like followers of: 3.
+2017-02-28 22:39:57,755 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:58,206 Request return 429 error!
+2017-02-28 22:39:58,206 3 not found / closed / has no followers.
+2017-02-28 22:39:58,210 Resetting dropped connection: i.instagram.com
+2017-02-28 22:39:58,566 Bot stopped. Worked: 0:00:02.714882
+2017-02-28 22:40:02,248 Bot Started
+2017-02-28 22:40:02,265 Starting new HTTPS connection (1): i.instagram.com
+2017-02-28 22:40:02,583 Resetting dropped connection: i.instagram.com
+2017-02-28 22:40:03,012 Login success!
+2017-02-28 22:40:03,012 Like followers of: khrigo.
+2017-02-28 22:40:03,016 Resetting dropped connection: i.instagram.com
+2017-02-28 22:40:03,611 Resetting dropped connection: i.instagram.com
+2017-02-28 22:40:04,208 Request return 429 error!
+2017-02-28 22:40:04,208 khrigo not found / closed / has no followers.
+2017-02-28 22:40:04,208 Like followers of: 3.
+2017-02-28 22:40:04,213 Resetting dropped connection: i.instagram.com
+2017-02-28 22:40:04,540 Request return 429 error!
+2017-02-28 22:40:04,540 3 not found / closed / has no followers.
+2017-02-28 22:40:04,544 Resetting dropped connection: i.instagram.com
+2017-02-28 22:40:05,166 Bot stopped. Worked: 0:00:02.917855
+2017-02-28 22:40:11,233 Bot Started
+2017-02-28 22:40:11,248 Starting new HTTPS connection (1): i.instagram.com
+2017-02-28 22:40:11,575 Resetting dropped connection: i.instagram.com
+2017-02-28 22:40:11,997 Login success!
+2017-02-28 22:40:11,997 Like followers of: khrigo.
+2017-02-28 22:40:12,001 Resetting dropped connection: i.instagram.com
+2017-02-28 22:40:12,357 Resetting dropped connection: i.instagram.com
+2017-02-28 22:40:12,923 Request return 429 error!
+2017-02-28 22:40:12,923 khrigo not found / closed / has no followers.
+2017-02-28 22:40:12,927 Resetting dropped connection: i.instagram.com
+2017-02-28 22:40:13,265 Bot stopped. Worked: 0:00:02.032090
