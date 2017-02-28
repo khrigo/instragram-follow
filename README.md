@@ -20,7 +20,7 @@ python follow_user_followers.py khrigo
 
 Like user followers
 ```python
-python like_user_followers.py khrigo
+python like_user_followers.py khrigo 3
 ```
 
 Unfollowing everyone users
