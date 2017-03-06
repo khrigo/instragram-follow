@@ -25,6 +25,7 @@ from .bot_unfollow import unfollow_users
 from .bot_unfollow import unfollow_everyone
 
 from .bot_filter import check_user
+from .bot_filter import check_private
 from .bot_filter import convert_to_user_id
 
 from .bot_like import like
@@ -37,8 +38,8 @@ class Bot(API):
     def __init__(self,
                  max_follows_per_day=350,
                  follow_delay=30,
-                 max_unfollows_per_day=2000,
-                 unfollow_delay=7,
+                 max_unfollows_per_day=650,
+                 unfollow_delay=15,
                  max_likes_per_day=1000,
                  like_delay=5):
         super(self.__class__, self).__init__()
@@ -143,6 +144,9 @@ class Bot(API):
 
     def check_user(self, user):
         return check_user(self, user)
+
+    def check_private(self, user):
+        return check_private(self, user)
 
     def convert_to_user_id(self, usernames):
         return convert_to_user_id(self, usernames)

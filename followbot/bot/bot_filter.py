@@ -35,6 +35,16 @@ def check_user(self, user_id):
             return False # bot or inactive user
     return True
 
+def check_private(self, user_id):
+    if not user_id:
+        return True
+
+    user_info = self.get_user_info(user_id)
+    if "is_private" in user_info:
+        if user_info["is_private"]:
+            return True
+    return False
+
 def convert_to_user_id(self, smth):
     if type(smth) == str and not smth.isdigit():
         if smth[0] == "@": # cut first @

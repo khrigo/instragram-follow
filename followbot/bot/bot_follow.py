@@ -14,6 +14,7 @@ def follow(self, user_id):
     if limits.check_if_bot_can_follow(self):
         delay.follow_delay(self)
         if super(self.__class__, self).follow(user_id):
+            self.logger.info("Follow user: %d" % user_id)
             self.total_followed += 1
             return True
     else:

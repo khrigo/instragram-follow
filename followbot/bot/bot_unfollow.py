@@ -10,6 +10,7 @@ def unfollow(self, user_id):
     if limits.check_if_bot_can_unfollow(self):
         delay.unfollow_delay(self)
         if super(self.__class__, self).unfollow(user_id):
+            self.logger.info("Unfollow user: %d" % user_id)
             self.total_unfollowed += 1
             return True
     else:
