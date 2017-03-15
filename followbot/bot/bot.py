@@ -13,28 +13,17 @@ from . import limits
 
 from .bot_get import get_userid_from_username, get_user_info, get_user_followers, get_user_following
 
-from .bot_follow import follow
-from .bot_follow import follow_users
-from .bot_follow import follow_followers
+from .bot_follow import follow, follow_users, follow_followers
 
-from .bot_unfollow import unfollow
-from .bot_unfollow import unfollow_users
-from .bot_unfollow import unfollow_everyone
+from .bot_unfollow import unfollow, unfollow_users, unfollow_everyone
 
-from .bot_filter import check_user
-from .bot_filter import check_private
-from .bot_filter import convert_to_user_id
+from .bot_filter import check_user, check_private, convert_to_user_id
 
-from .bot_like import like
-from .bot_like import like_medias
-from .bot_like import like_user_id
-from .bot_like import like_users
-from .bot_like import like_followers
+from .bot_like import like, like_medias, like_user_id, like_users, like_followers
 
 from .bot_checkpoint import save_checkpoint, load_checkpoint
 
-from .bot_support import check_if_file_exists, read_list_from_file
-from .bot_support import add_whitelist, add_blacklist
+from .bot_support import check_if_file_exists, read_list_from_file, add_whitelist, add_blacklist
 
 class Bot(API):
     def __init__(self,
@@ -80,10 +69,10 @@ class Bot(API):
         # white and blacklists
         self.whitelist = []
         if whitelist:
-            self.whitelist = read_list_from_file('whitelist.txt')
+            self.whitelist = read_list_from_file(whitelist)
         self.blacklist = []
         if blacklist:
-            self.blacklist = read_list_from_file('blacklist.txt')
+            self.blacklist = read_list_from_file(blacklist)
 
         signal.signal(signal.SIGTERM, self.logout)
         atexit.register(self.logout)

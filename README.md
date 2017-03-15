@@ -27,3 +27,8 @@ Unfollowing everyone users
 ```python
 python unfollow_everyone.py
 ```
+
+Use whitelist
+```python
+bot = Bot(whitelist="whitelist.txt")
+```
