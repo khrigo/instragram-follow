@@ -27,7 +27,7 @@ from .bot_support import check_if_file_exists, read_list_from_file, add_whitelis
 
 class Bot(API):
     def __init__(self,
-                 whitelist=True,
+                 whitelist=False,
                  blacklist=False,
                  max_follows_per_day=350,
                  follow_delay=30,
