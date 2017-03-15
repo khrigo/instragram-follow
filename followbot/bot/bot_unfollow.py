@@ -5,7 +5,7 @@ from . import delay
 
 def unfollow(self, user_id):
     user_id = self.convert_to_user_id(user_id)
-    if not self.check_user(user_id):
+    if self.check_user(user_id):
         return True
     if limits.check_if_bot_can_unfollow(self):
         delay.unfollow_delay(self)

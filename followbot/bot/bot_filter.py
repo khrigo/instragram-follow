@@ -12,6 +12,9 @@ def check_user(self, user_id):
     if not user_id:
         return True
 
+    if str(user_id) in self.whitelist:
+        return True
+
     user_info = self.get_user_info(user_id)
     if not user_info:
         return True # closed acc

@@ -11,10 +11,7 @@ from tqdm import tqdm
 from .. import API
 from . import limits
 
-from .bot_get import get_userid_from_username
-from .bot_get import get_user_info
-from .bot_get import get_user_followers
-from .bot_get import get_user_following
+from .bot_get import get_userid_from_username, get_user_info, get_user_followers, get_user_following
 
 from .bot_follow import follow
 from .bot_follow import follow_users
@@ -34,11 +31,18 @@ from .bot_like import like_user_id
 from .bot_like import like_users
 from .bot_like import like_followers
 
+from .bot_checkpoint import save_checkpoint, load_checkpoint
+
+from .bot_support import check_if_file_exists, read_list_from_file
+from .bot_support import add_whitelist, add_blacklist
+
 class Bot(API):
     def __init__(self,
+                 whitelist=True,
+                 blacklist=False,
                  max_follows_per_day=350,
                  follow_delay=30,
-                 max_unfollows_per_day=650,
+                 max_unfollows_per_day=700,
                  unfollow_delay=15,
                  max_likes_per_day=1000,
                  like_delay=5):
@@ -73,6 +77,14 @@ class Bot(API):
         # current following
         self.following = []
 
+        # white and blacklists
+        self.whitelist = []
+        if whitelist:
+            self.whitelist = read_list_from_file('whitelist.txt')
+        self.blacklist = []
+        if blacklist:
+            self.blacklist = read_list_from_file('blacklist.txt')
+
         signal.signal(signal.SIGTERM, self.logout)
         atexit.register(self.logout)
 
@@ -86,6 +98,21 @@ class Bot(API):
             self.logger.info("  Total unfollowed: %d" % self.total_unfollowed)
         if self.total_liked:
             self.logger.info("  Total liked: %d" % self.total_liked)
+
+    def login(self, *args):
+        super(self.__class__, self).login(args)
+        self.prepare()
+
+    def prepare(self):
+        storage = load_checkpoint(self)
+        if storage is not None:
+            self.total_liked, self.total_unliked, self.total_followed, \
+                self.total_unfollowed, self.total_commented, self.total_blocked, \
+                self.total_unblocked, self.start_time = storage
+        self.whitelist = [
+            self.convert_to_user_id(smth) for smth in self.whitelist]
+        self.blacklist = [
+            self.convert_to_user_id(smth) for smth in self.blacklist]
 
 # getters
 
@@ -150,3 +177,17 @@ class Bot(API):
 
     def convert_to_user_id(self, usernames):
         return convert_to_user_id(self, usernames)
+
+# support
+
+    def check_if_file_exists(self, file_path):
+        return check_if_file_exists(file_path)
+
+    def read_list_from_file(self, file_path):
+        return read_list_from_file(file_path)
+
+    def add_whitelist(self, file_path):
+        return add_whitelist(self, file_path)
+
+    def add_blacklist(self, file_path):
+        return add_blacklist(self, file_path)
