@@ -29,12 +29,16 @@ class Bot(API):
     def __init__(self,
                  whitelist=False,
                  blacklist=False,
-                 max_follows_per_day=350,
+                 max_follows_per_day=800,
                  follow_delay=30,
                  max_unfollows_per_day=700,
                  unfollow_delay=15,
                  max_likes_per_day=1000,
-                 like_delay=5):
+                 like_delay=5,
+                 min_followers_to_follow=200,
+                 max_followers_to_follow=2000,
+                 min_following_to_follow=50,
+                 max_following_to_follow=900):
         super(self.__class__, self).__init__()
 
         self.total_followed = 0
@@ -46,6 +50,12 @@ class Bot(API):
         self.max_likes_per_day = max_likes_per_day
         self.max_follows_per_day = max_follows_per_day
         self.max_unfollows_per_day = max_unfollows_per_day
+
+        # filter
+        self.min_followers_to_follow = min_followers_to_follow
+        self.max_followers_to_follow = max_followers_to_follow
+        self.min_following_to_follow = min_following_to_follow
+        self.max_following_to_follow = max_following_to_follow
 
         # delays
         self.like_delay = like_delay
