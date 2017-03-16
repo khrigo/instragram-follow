@@ -38,7 +38,10 @@ class Bot(API):
                  min_followers_to_follow=200,
                  max_followers_to_follow=2000,
                  min_following_to_follow=50,
-                 max_following_to_follow=900):
+                 max_following_to_follow=900,
+                 max_followers_to_following_ratio=10,
+                 max_following_to_followers_ratio=2,
+                 min_media_count_to_follow=5):
         super(self.__class__, self).__init__()
 
         self.total_followed = 0
@@ -56,6 +59,10 @@ class Bot(API):
         self.max_followers_to_follow = max_followers_to_follow
         self.min_following_to_follow = min_following_to_follow
         self.max_following_to_follow = max_following_to_follow
+
+        self.max_followers_to_following_ratio = max_followers_to_following_ratio
+        self.max_following_to_followers_ratio = max_following_to_followers_ratio
+        self.min_media_count_to_follow = min_media_count_to_follow
 
         # delays
         self.like_delay = like_delay

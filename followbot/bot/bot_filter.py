@@ -53,9 +53,6 @@ def check_user(self, user_id):
         if user_info["media_count"] < self.min_media_count_to_follow:
             return False  # bot or inactive user
 
-    if search_stop_words_in_user(self, user_info):
-        return False
-
     return True
 
 def check_private(self, user_id):
