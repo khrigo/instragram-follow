@@ -32,3 +32,9 @@ Use whitelist
 ```python
 bot = Bot(whitelist="whitelist.txt")
 ```
+
+
+Use blacklist
+```python
+bot = Bot(backlist="backlist.txt")
+```
