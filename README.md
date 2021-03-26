@@ -8,7 +8,7 @@ As you may know, Instagram closed it's API in summer 2016. This Python module ca
 Install latest stable version or update current from pip
 
 ``` python
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Sample usage
