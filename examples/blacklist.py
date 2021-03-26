@@ -5,6 +5,6 @@ sys.path.append(os.path.join(sys.path[0],'../'))
 
 from followbot import Bot
 
-bot = Bot(backlist="backlist.txt")
+bot = Bot(blacklist="blacklist.txt")
 bot.login()
 bot.follow_followers(username)
