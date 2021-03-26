@@ -36,5 +36,5 @@ bot = Bot(whitelist="whitelist.txt")
 
 Use blacklist
 ```python
-bot = Bot(backlist="backlist.txt")
+bot = Bot(blacklist="blacklist.txt")
 ```
